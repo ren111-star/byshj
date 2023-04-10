@@ -1,39 +1,55 @@
 package com;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.InputStream;
+import java.sql.*;
+import java.util.Properties;
 
 public class DatabaseConn {
-    private static DataSource ds = null;
+//    private static DataSource ds = null;
+    private static String url = null;
+    private static String username = null;
+    private static String password = null;
 
     static {
         try {
-            Context ctx = new InitialContext();
-            ds = (DataSource) ctx.lookup("java:/comp/env/jdbc/mysql_5_1_52");
+            InputStream in = DatabaseConn.class.getClassLoader().getResourceAsStream("db.properties");
+            Properties properties = new Properties();
+            properties.load(in);
+            String driverName = properties.getProperty("driver");
+            url = properties.getProperty("url");
+            username = properties.getProperty("username");
+            password = properties.getProperty("password");
+            Class.forName(driverName);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static Connection getConnection() throws SQLException {
-        return ds.getConnection();
+        return DriverManager.getConnection(url, username, password);
     }
 
-    public static void close(Connection con, Statement pstmt, ResultSet rst)
-            throws SQLException {
-        if (rst != null) {
-            rst.close();
+    public static void close(Connection conn, Statement st, ResultSet rs) throws SQLException {
+        if (rs!=null){
+            try {
+                rs.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
-        if (pstmt != null) {
-            pstmt.close();
+        if (st!=null){
+            try {
+                st.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
-        if (con != null) {
-            con.close();
+        if (conn!=null){
+            try {
+                conn.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ package bean;
 
 import java.util.Collection;
 
+
 public class InformBean {
 	private int infid;
 	private String title;

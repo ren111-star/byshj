@@ -1,10 +1,12 @@
 package bean;
 
 import com.SyscodeBean;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class TeacherBean {
 
     private String tid;//教师编号，6位字符
@@ -25,30 +27,6 @@ public class TeacherBean {
     private List<RoleBean> listrole;//角色列表
     private ArrayList<SyscodeBean> subdirections;//课题方向
 
-    public ArrayList<SyscodeBean> getSubdirections() {
-        return subdirections;
-    }
-
-    public void setSubdirections(ArrayList<SyscodeBean> subdirections) {
-        this.subdirections = subdirections;
-    }
-
-    public List<RoleBean> getListrole() {
-        return listrole;
-    }
-
-    public void setListrole(List<RoleBean> listrole) {
-        this.listrole = listrole;
-    }
-
-    public SpecialityBean getSpecbean() {
-        return specbean;
-    }
-
-    public void setSpecbean(SpecialityBean specbean) {
-        this.specbean = specbean;
-    }
-
     public TeacherBean() {
         specbean = new SpecialityBean();
         listrole = new ArrayList<RoleBean>();
@@ -60,17 +38,9 @@ public class TeacherBean {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getRemark() {
         if (remark == null) remark = "";
         return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
     }
 
     public String getStudydirect() {
@@ -78,34 +48,13 @@ public class TeacherBean {
         return studydirect;
     }
 
-    public void setStudydirect(String studydirect) {
-        this.studydirect = studydirect;
-    }
-
     public String getTdept() {
         if (tdept == null) tdept = "";
         return tdept;
     }
-
-    public void setTdept(String tdept) {
-        this.tdept = tdept;
-    }
-
     public String getTelphone() {
         if (telphone == null) telphone = "";
         return telphone;
-    }
-
-    public void setTelphone(String telphone) {
-        this.telphone = telphone;
-    }
-
-    public String getTid() {
-        return tid;
-    }
-
-    public void setTid(String tid) {
-        this.tid = tid;
     }
 
     public String getTname() {
@@ -113,17 +62,9 @@ public class TeacherBean {
         return tname;
     }
 
-    public void setTname(String tname) {
-        this.tname = tname;
-    }
-
     public String getTpost() {
         if (tpost == null) tpost = "";
         return tpost;
-    }
-
-    public void setTpost(String tpost) {
-        this.tpost = tpost;
     }
 
     public String getTsex() {
@@ -131,17 +72,9 @@ public class TeacherBean {
         return tsex;
     }
 
-    public void setTsex(String tsex) {
-        this.tsex = tsex;
-    }
-
     public String getTdeptname() {
         if (tdeptname == null) tdeptname = "";
         return tdeptname;
-    }
-
-    public void setTdeptname(String tdeptname) {
-        this.tdeptname = tdeptname;
     }
 
     public String getTpostname() {
@@ -149,17 +82,9 @@ public class TeacherBean {
         return tpostname;
     }
 
-    public void setTpostname(String tpostname) {
-        this.tpostname = tpostname;
-    }
-
     public String getTsexname() {
         if (tsexname == null) tsexname = "";
         return tsexname;
-    }
-
-    public void setTsexname(String tsexname) {
-        this.tsexname = tsexname;
     }
 
     public String getTdegree() {
@@ -167,16 +92,8 @@ public class TeacherBean {
         return tdegree;
     }
 
-    public void setTdegree(String tdegree) {
-        this.tdegree = tdegree;
-    }
-
     public String getTdegreename() {
         if (tdegreename == null) tdegreename = "";
         return tdegreename;
-    }
-
-    public void setTdegreename(String tdegreename) {
-        this.tdegreename = tdegreename;
     }
 }

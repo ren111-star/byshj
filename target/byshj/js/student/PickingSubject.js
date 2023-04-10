@@ -72,7 +72,8 @@ $(document).ready(function(){
 			$("#pickingsubjectdiv input[value='重新选择课题']").click(function(){
 				$.getJSON("../StusubServlet?mode=delsubsbystu",{stuid:stuid},function call(data){
 					if(data==null){
-			       		alert("请求异常！请与系统管理员联系，确定服务器是否运行正常！1");
+						alert("error!")
+			       		// alert("请求异常！请与系统管理员联系，确定服务器是否运行正常！1");
 			            return;
 			       	}
 					if(data.errmsg!=""){

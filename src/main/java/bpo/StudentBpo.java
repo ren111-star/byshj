@@ -1,6 +1,7 @@
 package bpo;
 
 import bean.StudentBean;
+import bean.StusubBean;
 import com.DatabaseConn;
 
 import java.sql.Connection;
@@ -237,9 +238,13 @@ public class StudentBpo {
         ResultSet rst = null;
         try {
             String vsql1 = "select * from tb_stusub where stuid=?";
-            pstmt = con.prepareStatement(vsql1);
+            pstmt = con.prepareStatement(vsql1, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             pstmt.setString(1, stuid);
             rst = pstmt.executeQuery();
+//            while (rst.next()) {
+//                System.out.println(rst.getString("subid"));
+//                System.out.println("-------------------");
+//            }
             rst.last();
             int row = rst.getRow();
             rst.beforeFirst();

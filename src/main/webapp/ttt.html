@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+    <script src="js/jquery-1.4.2.js" type="text/javascript"></script>
+ </head>
+ <!-- 异常处理测试，一直不管用 -->
+ <body>
+  <script>
+  alert("dddd");
+  
+	   $(function(){
+            var url = "http://localhost/abc.aspx";  //���url��ַ�ǲ����ڵ�
+             
+            //var url = "http://localhost/abc.aspx?jsoncallback=?";
+            $.ajaxSetup({
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    alert("error");
+                    return false;
+                }
+            });
+             
+ 
+            $.getJSON(url , function(data){
+                alert(data);
+            });
+  });
+  </script>
+ </body>
+ <div id="msg"></div>
+</html>

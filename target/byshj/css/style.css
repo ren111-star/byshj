@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+BODY {
+    FONT-SIZE: 12px;
+    background-image: url(../images/bbg.png);
+    background-repeat: repeat-x;
+    COLOR: #333;
+    LINE-HEIGHT: 170%;
+    FONT-FAMILY: "ËÎÌו", verdana, sans-serif, lucida grande, lucida, arial, helvetica;
+
+}
+
+A:link {
+    COLOR: #333;
+    TEXT-DECORATION: none
+}
+
+A:visited {
+    COLOR: #333;
+    TEXT-DECORATION: none
+}
+
+A:hover {
+    COLOR: #0068b7;
+    TEXT-DECORATION: none
+}
+
+A:active {
+    COLOR: #333;
+    TEXT-DECORATION: none
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 1004px;
+    background-image: url(../images/wbg.jpg);
+    background-repeat: repeat-y;
+}
+
+#header {
+    color: #333;
+    width: 984px;
+    float: left;
+    padding: 0px 10px;
+    height: 55px;
+    margin: 0;
+    background-color: #dbe6ec;
+    background-image: url(../images/hbg.jpg);
+    background-repeat: no-repeat;
+}
+
+#navigation {
+    float: left;
+    width: 984px;
+    color: #333;
+    padding: 0 10px;
+    border-bottom: 5px solid #66ccff;
+    margin: 0 0 0 0;
+    background-color: #dbe6ec;
+}
+
+#navigation span {
+    float: left;
+    padding: 0 0 0 0px;
+    margin: 0 0 0 0px;
+    height: 20px;
+    position: relative;
+    bottom: -12px
+}
+
+#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-weight: bold;
+    float: right;
+}
+
+#navigation ul li {
+    list-style: none;
+    display: inline;
+    float: left;
+    width: 96px;
+    height: 35px;
+    padding: 0;
+    line-height: 35px;
+    font-size: 13px;
+    margin: 0 1px 0 1px;
+}
+
+#navigation ul li a {
+    height: 35px;
+    width: 96px;
+    float: left;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    color: #6c7b83;
+    text-align: center;
+    background: url(../images/menu_bt.gif) no-repeat center 0%;
+}
+
+#navigation ul li a:hover {
+    height: 35px;
+    width: 96px;
+    text-decoration: none;
+    color: #68c2ef;
+}
+
+#content {
+    float: left;
+    color: #333;
+    background: #fafaee;
+    margin: 0 0 0 0;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+    min-height: 435px;
+    width: 989px;
+    display: inline;
+    text-align: justify;
+}
+
+#footer {
+    width: 984px;
+    clear: both;
+    color: #333;
+    background: #dbe6ec;
+    margin: 0 0 0 0;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.flag {
+    color: red;
+    font-size: 13px;
+}
+
+.flagmin {
+    color: red;
+    font-size: 13px;
+}

@@ -1,0 +1,99 @@
+.weekwin {   
+     /*窗口边框*/  
+    border:1px blue solid;   
+    /*窗口宽度高度固定*/  
+    width:100%;   
+    /*height:600px;*/   
+    /*初始化不可见*/  
+    display:block;
+    background-color:#f2f2f2;   
+    overflow:auto;
+    /*z-index:20;*/
+    align:center;
+    /*float:left;*/
+}  
+.win {   
+     /*窗口边框*/  
+    border:5px blue solid;   
+    /*窗口宽度高度固定*/  
+    width:800px;   
+    /*height:600px;*/   
+    /*窗口定位*/  
+    position:absolute;/*绝对定位*/  
+    top:50px;   
+    left:100px;   
+    /*初始化不可见*/  
+    display:none;
+    background-color:#f2f2f2;   
+    overflow:auto;
+    z-index:20;
+}   
+/*标题栏样式*/  
+.win .titlebar {   
+    background-color:blue;   
+    color:#FFFFFF;  
+    font-weight:bold; 
+    /*控制标题栏的左内边距*/  
+    padding-left:3px;   
+    padding-right:3px;
+    height:20px;
+}   
+  
+.win .content {   
+    padding-left:3px;   
+    padding-top:5px;   
+    clear:both;
+}   
+.win .title {   
+    float:left;
+}  
+.win .close{   
+    float:right;
+    margin-right:10px;
+    /*鼠标进入显示小手状态*/  
+    cursor:pointer;  
+}
+/*搜索窗口定义*/
+.searchwin {   
+     /*窗口边框*/  
+    border:1px red solid;   
+    /*窗口宽度高度固定*/  
+    width:200px;   
+    height:400px;   
+    /*窗口定位*/  
+    position:absolute;/*绝对定位*/  
+    top:78px;   
+    left:550px;
+    /*初始化不可见*/  
+    display:none;
+    background-color:#f2f2f2;   
+    overflow:auto;
+    z-index:20;
+}
+.searchwin .titlebar0 {   
+    background-color:#f2f2ee;   
+    /*控制标题栏的左内边距*/  
+    padding-left:3px;   
+    padding-right:3px;
+    height:20px;
+}   
+.searchwin .title0 {   
+    background:#f2f2ee;
+    font-weight:bold;
+    text-align:center;
+    display:inline;
+    float:left;
+} 
+.searchwin .content {   
+    padding-left:3px;   
+    padding-top:5px;   
+    clear:both;
+    overflow:auto;
+}
+.searchwin .close0{   
+    float:right;
+    /*鼠标进入显示小手状态*/  
+    cursor:pointer;  
+    display:inline;
+}
+ 

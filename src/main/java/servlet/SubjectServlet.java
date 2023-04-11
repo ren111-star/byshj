@@ -77,7 +77,10 @@ public class SubjectServlet extends HttpServlet {
         } else if (mode.equals("gets")) {//得到课题列表
             try {
                 String tutorid = request.getParameter("tutorid");
-                List<SubjectBean> subjects = new ArrayList<SubjectBean>();
+                tutorid = tutorid.substring(0, tutorid.length() - 1);
+
+                System.out.println(tutorid);
+                List<SubjectBean> subjects;
 
                 SubjectBpo subjectbpo = new SubjectBpo();
                 subjects = subjectbpo.getAllinfo(tutorid);

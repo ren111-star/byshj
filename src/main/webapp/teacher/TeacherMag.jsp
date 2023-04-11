@@ -88,6 +88,7 @@
 					<li><a href="#">课题库</a></li>
 				</ul>
 			</div>
+<%--			<label for="tutorid"><input style="display: none" id="tutorid" value='<%=userid%>>'/></label>--%>
 			<div id="content">
 				<div id="mysubject">
 					<table class="mtable2">

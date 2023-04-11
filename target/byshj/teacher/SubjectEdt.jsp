@@ -1,4 +1,3 @@
-<%@ page import="java.lang.Integer.parseInt" %>
 <%@ page contentType="text/html;charset=utf-8" pageEncoding="utf-8"%>
 <%
 	String userid=request.getParameter("userid");
@@ -64,7 +63,7 @@
 	 		</table>
 	 		<hr>
 	 		<div>
-	 			<table class="mtable2">
+	 			<table class="mtable2" id="ktshzy">
 	 				<tr><td width=100px>课题适合专业</td>
 	 					<td>
 	 						<div id="speciality"><input type="hidden" name="speccount" id="speccount" value="5"></div>

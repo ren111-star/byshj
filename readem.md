@@ -15,3 +15,6 @@ PreparedStatement
             pstmt = con.prepareStatement(vsql1, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 ```
 
+版本1.0.1
+
+修复了一些兼容性的bug

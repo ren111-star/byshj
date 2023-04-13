@@ -42,7 +42,7 @@ public class StusubServlet extends HttpServlet {
         } else if (mode.equals("getpickedsubsbystu")) {//获得学生已初选的课题列表
             String stuid = request.getParameter("stuid");
             try {
-                List<StusubBean> pickedsubs = new ArrayList<StusubBean>();
+                List<StusubBean> pickedsubs;
 
                 StusubBpo stusubbpo = new StusubBpo();
                 pickedsubs = stusubbpo.getPickedsSubsbyStu(stuid);

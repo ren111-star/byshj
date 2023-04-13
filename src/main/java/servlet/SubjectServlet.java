@@ -175,7 +175,7 @@ public class SubjectServlet extends HttpServlet {
             String substatus = request.getParameter("substatus");
             try {
                 SubjectBpo subjectbpo = new SubjectBpo();
-                List<SubjectBean> subjects = new ArrayList<SubjectBean>();
+                List<SubjectBean> subjects;
                 subjects = subjectbpo.getSubsBySpec(specid, tdept, tname, substatus);
                 Gson gson = new Gson();
                 result = gson.toJson(subjects);

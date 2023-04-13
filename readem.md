@@ -18,3 +18,7 @@ PreparedStatement
 版本1.0.1
 
 修复了一些兼容性的bug
+
+版本1.0.2
+
+添加了api设计文档

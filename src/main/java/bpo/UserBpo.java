@@ -264,6 +264,7 @@ public class UserBpo {
         List<RoleBean> ret = new ArrayList<RoleBean>();
         PreparedStatement pstmt = null;
         ResultSet rst = null;
+        // TODO: BUG
         String vsql = "select roleid,rolename,roledesc from tb_role where " +
                 "roleid in(select roleid from tb_userrole where userid=?)";
         try {

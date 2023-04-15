@@ -93,6 +93,8 @@
         </ul>
     </div>
     <%--			<label for="tutorid"><input style="display: none" id="tutorid" value='<%=userid%>>'/></label>--%>
+
+    <input type="hidden" id="tutorid" value="<%=userid%>"/>
     <div id="content">
         <div id="mysubject">
             <table class="mtable2">

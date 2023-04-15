@@ -74,10 +74,9 @@ public class SubjectServlet extends HttpServlet {
             } catch (Exception e) {
                 errmsg = e.getMessage();
             }
-        } else if (mode.equals("gets")) {//得到课题列表
+        } else if (mode.equals("gets")) {  // 得到课题列表
             try {
                 String tutorid = request.getParameter("tutorid");
-                tutorid = tutorid.substring(0, tutorid.length() - 1);
 
                 System.out.println(tutorid);
                 List<SubjectBean> subjects;
@@ -89,7 +88,6 @@ public class SubjectServlet extends HttpServlet {
             } catch (Exception e) {
                 errmsg = e.getMessage();
             }
-            //
         } else if (mode.equals("del")) {//删除课题（未提交课题才允许删除）
             String subid = request.getParameter("subid");
             try {
@@ -328,7 +326,7 @@ public class SubjectServlet extends HttpServlet {
             int speccount = Integer.valueOf(request.getParameter("speccount"));
             String specid = "";
             for (int i = 0; i < speccount; i++) {
-                specid = request.getParameter("spec_" + String.valueOf(i));
+                specid = request.getParameter("spec_" + i);
                 if (!(specid == null || specid.equals(""))) {
                     subject.getListspec().add(specid);
                 }
@@ -338,8 +336,8 @@ public class SubjectServlet extends HttpServlet {
             List<ProgressBean> progress = new ArrayList<ProgressBean>();
             String subprog = "";
             for (int i = 0; i < graduateweeknum; i = i + 2) {
-                String progresstime = request.getParameter("progresstime_" + String.valueOf(i));
-                String progressitem = request.getParameter("progressitem_" + String.valueOf(i));
+                String progresstime = request.getParameter("progresstime_" + i);
+                String progressitem = request.getParameter("progressitem_" + i);
                 subprog = subprog + progresstime + ":" + progressitem + "\r\n";
                 String inorder = String.valueOf(i);
                 ProgressBean progtemp = new ProgressBean();

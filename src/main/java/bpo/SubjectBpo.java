@@ -321,6 +321,9 @@ public class SubjectBpo {
                                             } else {//课题已发布，但是还没有学生选
                                                 SysarguBpo sysargubpo = new SysarguBpo();
                                                 String endpickingflag = sysargubpo.getSysargu("endpickingflag").getArguvalue();
+                                                if (endpickingflag.equals("")) {
+                                                    System.out.println("--------------------------");
+                                                }
                                                 if (endpickingflag.equals("1")) {
                                                     status = "选题已结束";
                                                 } else {
@@ -682,7 +685,6 @@ public class SubjectBpo {
     /**
      * @param subid
      * @return subid对应的专业列表
-     * @throws Exception
      */
     public List<SpecialityBean> getspecssub(String subid) throws Exception {
         Connection con = DatabaseConn.getConnection();

@@ -22,3 +22,7 @@ PreparedStatement
 版本1.0.2
 
 添加了api设计文档
+
+版本1.0.3
+
+修复了教师端查看课题的bug

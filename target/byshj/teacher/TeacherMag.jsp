@@ -187,6 +187,7 @@
             </div>
         </div>
         <%if (identity.equals("专业负责人")) {%>
+
         <div id="specsubmag" style="display:none">
             <jsp:include page="SpecSubMag.jsp" flush="true">
                 <jsp:param name="specid" value="<%=specid%>"/>

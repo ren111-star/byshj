@@ -11,7 +11,7 @@ public class StudentBean {
     private String classname;//班级名
     private ClassBean classbean;//班级bean
     private String email;
-    private String telphone;//电话
+    private String telephone;//电话
     private String remark;//备注
     private String status;//学生状态
     private SubjectBean subject;//学生选择的课题列表
@@ -52,14 +52,14 @@ public class StudentBean {
     }
 
 
-    public String getTelphone() {
-        if (telphone == null) telphone = "";
-        return telphone;
+    public String getTelephone() {
+        if (telephone == null) telephone = "";
+        return telephone;
     }
 
-    public void setTelphone(String telphone) {
-        if (telphone == null) telphone = "";
-        this.telphone = telphone;
+    public void setTelephone(String telephone) {
+        if (telephone == null) telephone = "";
+        this.telephone = telephone;
     }
 
     public String getClassname() {

@@ -46,7 +46,7 @@ public class TeacherBpo {
 		con.setAutoCommit(false);
 		PreparedStatement pstmt1=null;
 		try{
-			vsql="insert into tb_teacher(tid,tname,tsex,specid,tdept,tpost,tdegree,studydirect,email,telphone,remark) "+
+			vsql="insert into tb_teacher(tid,tname,tsex,specid,tdept,tpost,tdegree,studydirect,email,telephone,remark) "+
 			     "values(?,?,?,?,?,?,?,?,?,?,?)";
 			String vsql1="insert into tb_user(usertype,userid,username,userpwd) values(?,?,?,?)";
 			
@@ -60,7 +60,7 @@ public class TeacherBpo {
 			pstmt.setString(7,teacher.getTdegree());
 			pstmt.setString(8,teacher.getStudydirect());
 			pstmt.setString(9,teacher.getEmail());
-			pstmt.setString(10,teacher.getTelphone());
+			pstmt.setString(10,teacher.getTelephone());
 			pstmt.setString(11,teacher.getRemark());
 			pstmt.executeUpdate();
 		
@@ -194,7 +194,7 @@ public class TeacherBpo {
 			temp.setTdegree(rst.getString("tdegree"));
 			temp.setStudydirect(rst.getString("studydirect"));
 			temp.setEmail(rst.getString("email"));
-			temp.setTelphone(rst.getString("telphone"));
+			temp.setTelephone(rst.getString("telephone"));
 			temp.setRemark(rst.getString("remark"));
 			temp.setListrole(userbpo.getrolesbyuser(rst.getString("tid")));
 			ret.add(temp);
@@ -225,7 +225,7 @@ public class TeacherBpo {
 			pstmt.setString(1, tdept+"%");
 			pstmt.setString(2, tname+"%");
 			rst=pstmt.executeQuery();
-			while(rst.next())
+			while(rst.next())  // t
 			{
 				TeacherBean temp=new TeacherBean();
 				temp.setTid(rst.getString("tid"));
@@ -251,7 +251,7 @@ public class TeacherBpo {
 				}
 				temp.setStudydirect(rst.getString("studydirect"));
 				temp.setEmail(rst.getString("email"));
-				temp.setTelphone(rst.getString("telphone"));
+				temp.setTelephone(rst.getString("telephone"));
 				temp.setRemark(rst.getString("remark"));
 				temp.setListrole(userbpo.getrolesbyuser(rst.getString("tid")));
 				ret.add(temp);
@@ -308,7 +308,7 @@ public class TeacherBpo {
 				}
 				temp.setStudydirect(rst.getString("studydirect"));
 				temp.setEmail(rst.getString("email"));
-				temp.setTelphone(rst.getString("telphone"));
+				temp.setTelephone(rst.getString("telephone"));
 				temp.setRemark(rst.getString("remark"));
 				temp.setListrole(userbpo.getrolesbyuser(tid));
 			}
@@ -326,7 +326,7 @@ public class TeacherBpo {
 		PreparedStatement pstmt=null;
 		String vsql;
 		///////////////////////////////////////////////////////////
-		vsql="update tb_teacher set tname=?,tsex=?,specid=?,tdept=?,tpost=?,tdegree=?,studydirect=?,email=?,telphone=?,remark=? where tid=? ";
+		vsql="update tb_teacher set tname=?,tsex=?,specid=?,tdept=?,tpost=?,tdegree=?,studydirect=?,email=?,telephone=?,remark=? where tid=? ";
 	    pstmt=con.prepareStatement(vsql);
 		pstmt.setString(1,teacher.getTname());
 		pstmt.setString(2,teacher.getTsex());
@@ -336,7 +336,7 @@ public class TeacherBpo {
 		pstmt.setString(6,teacher.getTdegree());
 		pstmt.setString(7,teacher.getStudydirect());
 		pstmt.setString(8,teacher.getEmail());
-		pstmt.setString(9,teacher.getTelphone());
+		pstmt.setString(9,teacher.getTelephone());
 		pstmt.setString(10,teacher.getRemark());
 		pstmt.setString(11,teacher.getTid());
 		
@@ -355,13 +355,13 @@ public class TeacherBpo {
 		String vsql;
 		///////////////////////////////////////////////////////////
 		try {
-			vsql="update tb_teacher set tsex=?,tpost=?,studydirect=?,email=?,telphone=?,tdegree=? where tid=? ";
+			vsql="update tb_teacher set tsex=?,tpost=?,studydirect=?,email=?,telephone=?,tdegree=? where tid=? ";
 			pstmt=con.prepareStatement(vsql);
 			pstmt.setString(1,teacher.getTsex());
 			pstmt.setString(2,teacher.getTpost());
 			pstmt.setString(3,teacher.getStudydirect());
 			pstmt.setString(4,teacher.getEmail());
-			pstmt.setString(5,teacher.getTelphone());
+			pstmt.setString(5,teacher.getTelephone());
 			pstmt.setString(6,teacher.getTdegree());
 			pstmt.setString(7,teacher.getTid());
 			

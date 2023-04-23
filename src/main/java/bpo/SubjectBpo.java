@@ -113,9 +113,8 @@ public class SubjectBpo {
             //System.out.println(subid);
 
             // 保存课题适合专业信息
-            Iterator it = subject.getListspec().iterator();
-            while (it.hasNext()) {
-                String specid = String.valueOf(it.next());
+            for (String s : subject.getListspec()) {
+                String specid = String.valueOf(s);
                 vsql = "insert into tb_subspec(subid,specid,operatedtime) values(?,?,now())";
                 pstmt = con.prepareStatement(vsql);
                 pstmt.setInt(1, subid);
@@ -124,8 +123,7 @@ public class SubjectBpo {
             }
             //保存课题进程
             List<ProgressBean> progress = subject.getProgress();
-            for (Iterator<ProgressBean> itp = progress.iterator(); itp.hasNext(); ) {
-                ProgressBean progresstemp = itp.next();
+            for (ProgressBean progresstemp : progress) {
                 String inorder = progresstemp.getInorder();
                 String content = progresstemp.getContent();
                 String startenddate = progresstemp.getStartenddate();
@@ -1070,7 +1068,7 @@ public class SubjectBpo {
                 ClassBpo classbpo = new ClassBpo();
                 temp.setClassbean(classbpo.getByclassname(classname0));
                 temp.setEmail(rst.getString("email"));
-                temp.setTelphone(rst.getString("telphone"));
+                temp.setTelephone(rst.getString("telephone"));
                 temp.setSsex(rst.getString("ssex"));
 
                 //判断学生选题状态
@@ -1352,6 +1350,7 @@ public class SubjectBpo {
                 throw new Exception("课题<" + rst.getString("subname") + ">已提交不允许删除!");
             }
         } catch (Exception e) {
+            e.printStackTrace();
             throw e;
         } finally {
             DatabaseConn.close(null, pstmt, rst);

@@ -27,7 +27,6 @@ public class SubjectServlet extends HttpServlet {
         String mode = request.getParameter("mode");
         if (mode.equals("edt")) {
             String subid = request.getParameter("subid");
-            //System.out.println("subid："+subid);
             if (subid == null || subid.equals("自动编号")) {//增加新课题
                 try {
                     //获得表单数据
@@ -316,14 +315,14 @@ public class SubjectServlet extends HttpServlet {
             subject.setSubsource(request.getParameter("subsource"));
             subject.setSubtype(request.getParameter("subtype"));
             subject.setSubdirection(request.getParameter("subdirection"));
-            subject.setIsoutschool(Integer.valueOf(request.getParameter("subaddress")));
+            subject.setIsoutschool(Integer.parseInt(request.getParameter("subaddress")));
             subject.setRefpapers(request.getParameter("refpapers"));
             subject.setContent(request.getParameter("content"));
             subject.getTutor().setTid(request.getParameter("tutorid"));
 
             //取得适应专业
             //System.out.println(request.getParameter("speccount"));
-            int speccount = Integer.valueOf(request.getParameter("speccount"));
+            int speccount = Integer.parseInt(request.getParameter("speccount"));
             String specid = "";
             for (int i = 0; i < speccount; i++) {
                 specid = request.getParameter("spec_" + i);
@@ -332,7 +331,7 @@ public class SubjectServlet extends HttpServlet {
                 }
             }
             //取得课题进程
-            int graduateweeknum = Integer.valueOf(request.getParameter("graduateweeknum"));
+            int graduateweeknum = Integer.parseInt(request.getParameter("graduateweeknum"));
             List<ProgressBean> progress = new ArrayList<ProgressBean>();
             String subprog = "";
             for (int i = 0; i < graduateweeknum; i = i + 2) {

@@ -22,7 +22,7 @@ public class TeacherBean {
     private String tdegreename;//学位名称
     private String studydirect;//研究方向
     private String email;
-    private String telphone;//电话
+    private String telephone;//电话
     private String remark;//备注
     private List<RoleBean> listrole;//角色列表
     private ArrayList<SyscodeBean> subdirections;//课题方向
@@ -52,9 +52,9 @@ public class TeacherBean {
         if (tdept == null) tdept = "";
         return tdept;
     }
-    public String getTelphone() {
-        if (telphone == null) telphone = "";
-        return telphone;
+    public String getTelephone() {
+        if (telephone == null) telephone = "";
+        return telephone;
     }
 
     public String getTname() {

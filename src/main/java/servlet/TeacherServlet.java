@@ -47,7 +47,7 @@ public class TeacherServlet extends HttpServlet {
             TeacherBean teacher = new TeacherBean();
             teacher.setTid(request.getParameter("tid"));
             teacher.setEmail(request.getParameter("email"));
-            teacher.setTelphone(request.getParameter("telphone"));
+            teacher.setTelephone(request.getParameter("telephone"));
             teacher.setTsex(request.getParameter("tsex"));
             teacher.setStudydirect(request.getParameter("studydirect"));
             teacher.setTdegree(request.getParameter("tdegree"));

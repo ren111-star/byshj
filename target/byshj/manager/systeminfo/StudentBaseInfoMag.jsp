@@ -18,7 +18,7 @@
 		<td style="width:80px"><br><input type="text" name="sname" class="text"/></td>
 		<td style="width:80px"><br><select name="classname"/><option value=""></option></td>
 		<td style="width:160px"><br><input type="text" name="email" class="text"/></td>
-		<td style="width:100px"><br><input type="text" name="telphone" class="text"/></td>
+		<td style="width:100px"><br><input type="text" name="telephone" class="text"/></td>
 		<td><br><input type="button" name="add" value="增加"/>&nbsp;&nbsp;<span name="errmsg" class="flag"></span></td>
 	</tr>
 </table>

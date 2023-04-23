@@ -36,8 +36,8 @@ public class StusubBpo {
 			StudentBpo studentbpo=new StudentBpo();
 			StudentBean student=studentbpo.getBystuid(stuid);
 			String email=student.getEmail();
-			String telphone=student.getTelphone();
-			if(email.equals("")||telphone.equals("")){
+			String telephone=student.getTelephone();
+			if(email.equals("")||telephone.equals("")){
 				throw new Exception("操作失败：你还没有输入邮箱和手机号，为方便指导教师和你联系，请在“个人信息”页输入并保存后再“提交选题志愿”！");
 			}
 			con.setAutoCommit(false);

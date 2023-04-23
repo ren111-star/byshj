@@ -50,14 +50,14 @@ public class StudentBpo {
         con.setAutoCommit(false);
         PreparedStatement pstmt1 = null;
         try {
-            vsql = "insert into tb_student(stuid,sname,classname,email,telphone) values(?,?,?,?,?)";
+            vsql = "insert into tb_student(stuid,sname,classname,email,telephone) values(?,?,?,?,?)";
             String vsql1 = "insert into tb_user(usertype,userid,username,userpwd) values(?,?,?,?)";
             pstmt = con.prepareStatement(vsql);
             pstmt.setString(1, student.getStuid());
             pstmt.setString(2, student.getSname());
             pstmt.setString(3, student.getClassname());
             pstmt.setString(4, student.getEmail());
-            pstmt.setString(5, student.getTelphone());
+            pstmt.setString(5, student.getTelephone());
             pstmt.executeUpdate();
 
             pstmt1 = con.prepareStatement(vsql1);
@@ -183,7 +183,7 @@ public class StudentBpo {
                 ClassBpo classbpo = new ClassBpo();
                 temp.setClassbean(classbpo.getByclassname(classname0));
                 temp.setEmail(rst.getString("email"));
-                temp.setTelphone(rst.getString("telphone"));
+                temp.setTelephone(rst.getString("telephone"));
                 temp.setRemark(rst.getString("remark"));
                 ret.add(temp);
             }
@@ -218,7 +218,7 @@ public class StudentBpo {
                 ClassBpo classbpo = new ClassBpo();
                 temp.setClassbean(classbpo.getByclassname(classname));
                 temp.setEmail(rst.getString("email"));
-                temp.setTelphone(rst.getString("telphone"));
+                temp.setTelephone(rst.getString("telephone"));
                 temp.setRemark(rst.getString("remark"));
             }
         } catch (Exception e) {
@@ -295,14 +295,14 @@ public class StudentBpo {
         //有效性验证
         PreparedStatement pstmt = null;
         try {
-            String vsql = "update tb_student set sname=?,ssex=?,classname=?,email=?,telphone=?,remark=? where stuid=? ";
+            String vsql = "update tb_student set sname=?,ssex=?,classname=?,email=?,telephone=?,remark=? where stuid=? ";
             pstmt = con.prepareStatement(vsql);
 
             pstmt.setString(1, student.getSname());
             pstmt.setString(2, student.getSsex());
             pstmt.setString(3, student.getClassname());
             pstmt.setString(4, student.getEmail());
-            pstmt.setString(5, student.getTelphone());
+            pstmt.setString(5, student.getTelephone());
             pstmt.setString(6, student.getRemark());
             pstmt.setString(7, student.getStuid());
 
@@ -325,11 +325,11 @@ public class StudentBpo {
 
         ///////////////////////////////////////////////////////////
         try {
-            vsql = "update tb_student set ssex=?,email=?,telphone=? where stuid=? ";
+            vsql = "update tb_student set ssex=?,email=?,telephone=? where stuid=? ";
             pstmt = con.prepareStatement(vsql);
             pstmt.setString(1, student.getSsex());
             pstmt.setString(2, student.getEmail());
-            pstmt.setString(3, student.getTelphone());
+            pstmt.setString(3, student.getTelephone());
             pstmt.setString(4, student.getStuid());
 
             pstmt.execute();

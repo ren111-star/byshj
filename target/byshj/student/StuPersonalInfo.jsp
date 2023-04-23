@@ -27,7 +27,7 @@
 	 				<td>电子邮箱</td>
 	 				<td colspan=3><input name="email" type="text" class="text"/></td>
 	 				<td>&nbsp;&nbsp;&nbsp;&nbsp;手&nbsp;&nbsp;&nbsp;&nbsp;机</td>
-	 				<td colspan=3><input name="telphone" type="text" class="text"/></td>
+	 				<td colspan=3><input name="telephone" type="text" class="text"/></td>
 	 			</tr>
 	 			
 	 			<tr><td><br></td></tr>

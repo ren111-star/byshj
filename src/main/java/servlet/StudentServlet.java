@@ -51,7 +51,7 @@ public class StudentServlet extends HttpServlet {
             StudentBean student = new StudentBean();
             student.setStuid(request.getParameter("stuid"));
             student.setEmail(request.getParameter("email"));
-            student.setTelphone(request.getParameter("telphone"));
+            student.setTelephone(request.getParameter("telephone"));
             student.setSsex(request.getParameter("ssex"));
             try {
                 StudentBpo studentbpo = new StudentBpo();
